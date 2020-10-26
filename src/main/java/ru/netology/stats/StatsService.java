@@ -34,7 +34,7 @@ public class StatsService {
         long month = 0;
         for (int i=0; i<purchases.length; i++) {
             long purchase = purchases[i];
-            if (currentMin> purchase) {
+            if (currentMin>= purchase) {
                 currentMin = purchase;
                 month = i;
             }
@@ -45,7 +45,7 @@ public class StatsService {
         long average = calculateAverage(purchases);
         long countMonths = 0;
         for (long purchase : purchases) {
-            if (purchase< average) {
+            if (purchase < average) {
                 countMonths += 1;
             }
         }
@@ -55,7 +55,7 @@ public class StatsService {
         long average = calculateAverage(purchases);
         long countMonths = 0;
         for (long purchase : purchases) {
-            if (purchase< average) {
+            if (purchase > average) {
                 countMonths += 1;
             }
         }
